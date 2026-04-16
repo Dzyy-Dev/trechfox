@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrechFox - Inovasi & Integritas Finansial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1a1f2e;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            background: #0a1628;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: #d4af37;
+        }
+
+        .login-link {
+            background: transparent;
+            border: 1.5px solid #d4af37;
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: #d4af37 !important;
+        }
+
+        .login-link:hover {
+            background: #d4af37;
+            color: #0a1628 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0f1f3a 50%, #162b4a 100%);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 span {
+            color: #d4af37;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #b0c4de;
+            max-width: 550px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: #0a1628;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #e8c44a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid #d4af37;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* AI Section */
+        .ai-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: #0a1628;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #5a6e8a;
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .ai-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .ai-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .ai-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0a1628;
+        }
+
+        .ai-card p {
+            color: #5a6e8a;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-inner {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+            color: #0a1628;
+        }
+
+        .about-text p {
+            color: #5a6e8a;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+        }
+
+        .about-stat h4 {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 8px;
+        }
+
+        /* Careers Section */
+        .careers {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a1628 0%, #0f1f3a 100%);
+            color: white;
+        }
+
+        .careers .container {
+            text-align: center;
+        }
+
+        .careers h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .careers p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.8;
+        }
+
+        .job-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .job-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 16px;
+            min-width: 250px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .job-card h4 {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #061020;
+            color: #8a9bb0;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col a {
+            color: #8a9bb0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 24px;
+            color: #0a1628;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 14px;
+            background: #0a1628;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-content button:hover {
+            background: #d4af37;
+            color: #0a1628;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .switch-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .switch-text a {
+            color: #d4af37;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .user-badge {
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-badge span {
+            color: #d4af37;
+            font-weight: 500;
+        }
+
+        .logout-nav {
+            background: none;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 36px; }
+            .hero-stats { margin-top: 40px; }
+            .nav { gap: 16px; }
+            .container { padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="#" class="logo">Trech<span>Fox</span></a>
+            <div class="nav">
+                <a href="#">Beranda</a>
+                <a href="#about">Tentang</a>
+                <a href="#careers">Karir</a>
+                <a href="#" id="loginBtn" class="login-link">Masuk</a>
+                <div id="userBadge" class="user-badge">
+                    <span id="userNameBadge"></span>
+                    <button id="logoutNavBtn" class="logout-nav">Keluar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Masa Depan<br>Keuangan <span>Dimulai</span> Di Sini</h1>
+                <p>TrechFox menghadirkan wawasan investasi berbasis AI dan layanan finansial terpercaya untuk investor modern.</p>
+                <div class="hero-buttons">
+                    <a href="#" id="heroLoginBtn" class="btn-primary">Mulai Sekarang</a>
+                    <a href="#about" class="btn-secondary">Pelajari Lebih</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <h3>$50B+</h3>
+                    <p>Aset Dikelola</p>
+                </div>
+                <div class="stat-card">
+                    <h3>150+</h3>
+                    <p>Klien Global</p>
+                </div>
+                <div class="stat-card">
+                    <h3>25+</h3>
+                    <p>Negara</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-section">
+        <div class="container">
+            <h2 class="section-title">Artificial Intelligence</h2>
+            <p class="section-subtitle">Inovasi AI untuk keputusan investasi yang lebih cerdas</p>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-icon">🤖</div>
+                    <h3>Analisis Prediktif</h3>
+                    <p>Kami menggunakan AI untuk memprediksi tren pasar dengan akurasi tinggi.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon">📊</div>
+                    <h3>Big Data</h3>
+                    <p>Analisis data real-time dari berbagai sumber global.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon">⚡</div>
+                    <h3>Eksekusi Cepat</h3>
+                    <p>Algoritma canggih untuk eksekusi trading dalam milidetik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-text">
+                    <h2>Tentang TrechFox</h2>
+                    <p>TrechFox adalah perusahaan finansial global yang berfokus pada inovasi, integritas, dan layanan klien. Kami menghadirkan wawasan mendalam di bidang investasi, teknologi AI, dan talenta terbaik dunia.</p>
+                    <p>Dengan riset kami di seluruh pasar, serta kerja sama dengan klien, kami bertujuan untuk memberikan analisis bermakna tentang kecerdasan buatan dan implikasinya bagi investor serta pemimpin bisnis.</p>
+                    <a href="#" class="btn-primary" style="display: inline-block; margin-top: 20px;">Pelajari Lebih Lanjut →</a>
+                </div>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <h4>2018</h4>
+                        <p>Tahun Berdiri</p>
+                    </div>
+                    <div class="about-stat">
+                        <h4>500+</h4>
+                        <p>Karyawan</p>
+                    </div>
+                    <div class="about-stat">
+                        <h4>98%</h4>
+                        <p>Kepuasan Klien</p>
+                    </div>
+                    <div class="about-stat">
+                        <h4>24/7</h4>
+                        <p>Dukungan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="careers">
+        <div class="container">
+            <h2>Bergabung Dengan Kami</h2>
+            <p>TrechFox selalu mencari talenta terbaik untuk berkembang bersama. Temukan posisi yang sesuai untuk Anda.</p>
+            <div class="job-grid">
+                <div class="job-card">
+                    <h4>AI Engineer</h4>
+                    <p>Jakarta</p>
+                </div>
+                <div class="job-card">
+                    <h4>Financial Analyst</h4>
+                    <p>Singapore</p>
+                </div>
+                <div class="job-card">
+                    <h4>Product Manager</h4>
+                    <p>Jakarta</p>
+                </div>
+            </div>
+            <a href="#" class="btn-primary" style="display: inline-block; margin-top: 40px;">Lihat Semua Lowongan →</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>TrechFox</h4>
+                <a href="#">Tentang Kami</a>
+                <a href="#">Karir</a>
+                <a href="#">Investor Relations</a>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <a href="#">Wealth Management</a>
+                <a href="#">Asset Management</a>
+                <a href="#">AI Research</a>
+            </div>
+            <div class="footer-col">
+                <h4>Dukungan</h4>
+                <a href="#">Kontak</a>
+                <a href="#">FAQ</a>
+                <a href="#">Kebijakan Privasi</a>
+            </div>
+            <div class="footer-col">
+                <h4>Ikuti Kami</h4>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TrechFox. Seluruh hak cipta dilindungi.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Login -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Masuk ke Akun</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button id="doLogin">Masuk</button>
+        <div class="switch-text">
+            Belum punya akun? <a id="toRegister">Daftar Sekarang</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Register -->
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRegisterModal">&times;</span>
+        <h2>Daftar Akun</h2>
+        <input type="text" id="regName" placeholder="Nama Lengkap">
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Password">
+        <button id="doRegister">Daftar</button>
+        <div class="switch-text">
+            Sudah punya akun? <a id="toLogin">Masuk</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Ambil elemen
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const loginBtn = document.getElementById('loginBtn');
+    const heroLoginBtn = document.getElementById('heroLoginBtn');
+    const closeLogin = document.getElementById('closeLoginModal');
+    const closeRegister = document.getElementById('closeRegisterModal');
+    const toRegister = document.getElementById('toRegister');
+    const toLogin = document.getElementById('toLogin');
+    const doLogin = document.getElementById('doLogin');
+    const doRegister = document.getElementById('doRegister');
+    const userBadge = document.getElementById('userBadge');
+    const userNameBadge = document.getElementById('userNameBadge');
+    const loginLink = document.querySelector('.login-link');
+    const logoutNavBtn = document.getElementById('logoutNavBtn');
+
+    // Cek login
+    function checkLogin() {
+        const user = localStorage.getItem('userName');
+        if (user) {
+            userBadge.style.display = 'flex';
+            userNameBadge.innerText = user;
+            if (loginLink) loginLink.style.display = 'none';
+        } else {
+            userBadge.style.display = 'none';
+            if (loginLink) loginLink.style.display = 'inline-block';
+        }
+    }
+
+    // Buka modal
+    function openLoginModal() {
+        loginModal.style.display = 'flex';
+    }
+    function closeLoginModal() {
+        loginModal.style.display = 'none';
+    }
+    function openRegisterModal() {
+        registerModal.style.display = 'flex';
+    }
+    function closeRegisterModal() {
+        registerModal.style.display = 'none';
+    } 
